@@ -6,38 +6,98 @@
     <title>Coming Soon</title>
     <style>
         body {
-            background-image: url('path_to_your_image.jpg');
+            background-image: url('https://images.unsplash.com/photo-1506097613482-c8da0dbc0e58?w=1600&h=900&fit=crop');
             background-size: cover;
             background-position: center;
-            font-family: Arial, sans-serif;
+            background-attachment: fixed;
+            font-family: 'Georgia', serif;
             color: white;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        body > * {
+            z-index: 2;
+            position: relative;
         }
         h1 {
             font-size: 3em;
             margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
         }
         h2 {
-            font-size: 2em;
-            margin-top: 10px;
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 1px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 40px;
+            filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.7));
+        }
+        .contact {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1em;
+            font-weight: 300;
+            letter-spacing: 1px;
+            z-index: 3;
+        }
+        .contact a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+            transition: opacity 0.3s;
+        }
+        .contact a:hover {
+            opacity: 0.7;
         }
         @media (max-width: 600px) {
+            img {
+                max-width: 140px;
+                margin-bottom: 30px;
+            }
             h1 {
                 font-size: 2em;
             }
             h2 {
-                font-size: 1.5em;
+                font-size: 1.2em;
             }
         }
     </style>
 </head>
 <body>
-    <h1>New website coming soon</h1>
-    <h2>We're working on creating something better</h2>
+    <img src="assets/clyrovia_logo.png" alt="Clyrovia Logo">
+    <h1>Something Beautiful is Brewing</h1>
+    <h2>In the silence of creation, we craft what the world needs tomorrow</h2>
+    
+    <div class="contact">
+        Contact: <a href="mailto:admin@clyrovia.com">admin@clyrovia.com</a>
+    </div>
 </body>
 </html>
